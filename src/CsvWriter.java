@@ -20,10 +20,14 @@ public class CsvWriter {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(this.filename, true));
                 writer.append("\n");
                 writer.append(entry);
-                System.out.println(entry);}
+                System.out.println(entry);
+                    writer.flush();
+                    writer.close();}
                 catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+
             });
 
 
